@@ -1,0 +1,63 @@
+
+@import '../../styles.scss';
+
+.HamburgerMenu {
+    background-color: transparent;
+    height: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:  60%;
+    max-width:$screen-md-min; 
+    z-index: 200;
+    transform: translate(-100%);
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    @media #{$xs-screen} {
+        width:  100%;
+    }
+    &.open {
+        transform: translate(0);
+        background-color: $toolbarBackground;
+        box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.6);
+    }
+    
+    .closeBtn {
+        height: $toolbarHeight;
+        display: flex;
+        justify-content: center;
+        button {
+
+            height: 4 * $space;
+            width: 4 * $space;
+            font-size: 1.5rem;
+            color:$linkColor;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        
+        li {
+            display: block;
+            margin: auto;
+            padding: $space 2*$space;
+            a {
+                color: $linkColor;
+                &:hover {
+                    color: $linkHoverColor;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+$space:12px;
+$toolbarHeight:4 * $space;
+$toolbarBackground:black;
+$linkColor:white;
+$linkHoverColor:rgb(255, 251, 0);
+
+
+
+
+$screen-sm-min: 400px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 720px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 960px;
+$screen-md-max: ($screen-lg-min - 1);
+$screen-lg-max: 1200px;
+$screen-ul-min: ($screen-lg-max - 1);
+
+
+
+
+$xs-screen: "only screen and (min-width:#{0px}) and (max-width:#{$screen-xs-max})";
+$small-screen:  "only screen and (min-width:#{$screen-sm-min}) and (max-width:#{$screen-sm-max})";
+$up-small-screen:  "only screen and (min-width:#{$screen-sm-min})";
+
+$medium-screen: "only screen and (min-width:#{$screen-md-min}) and (max-width:#{$screen-md-max})";
+$up-medium-screen: "only screen and (min-width:#{$screen-md-min})";
+
+$large-screen:  "only screen and (min-width:#{$screen-lg-min}) and (max-width:#{$screen-lg-max})";
+$up-large-screen:  "only screen and (min-width:#{$screen-ul-min})";
+

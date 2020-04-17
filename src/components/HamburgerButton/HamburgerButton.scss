@@ -1,0 +1,23 @@
+@import '../../styles.scss';
+
+
+.hamburgerButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 2 * $space;
+    width: 2 * $space;
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+    .hamburgerButtonLine {
+        width: 2 * $space;
+        height: 2.5px;
+        background-color: $linkColor;
+    }
+}

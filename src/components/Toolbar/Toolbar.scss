@@ -1,0 +1,64 @@
+
+
+@import '../../styles.scss';
+
+
+
+
+a {
+    text-decoration: none;
+}
+.toolbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: $toolbarHeight;
+    background:$toolbarBackground;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+
+    .toolbar-nav {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 $space;
+        .nav-btn {
+            display: inline-block;
+            @media #{$up-medium-screen} {
+                display:  none;
+            }
+
+        }
+        .nav-logo {
+            padding: 0 $space;
+            flex: 1;
+            a {
+                font-size: 2rem;
+                color: $linkHoverColor;
+            }
+        }
+        .nav-items {
+            display: none;
+            @media #{$up-medium-screen} {
+                display:  inline-block;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                li {
+                    display: inline-block;
+                    padding: 0 $space;
+                    a {
+                        color: $linkColor;
+                        &:hover {
+                            color: $linkHoverColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+}
