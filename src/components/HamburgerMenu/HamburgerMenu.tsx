@@ -1,6 +1,7 @@
 import React from 'react';
 import './HamburgerMenu.scss';
-const HamburgerMenu = (props: { isOpen: boolean, hamburgerMenuCloseClickHandler: any }) => {
+import { RouteObject } from '../../interfaces/routerObject.interface';
+const HamburgerMenu = (props: { isOpen: boolean, hamburgerMenuCloseClickHandler: any, links: RouteObject[] }) => {
     let classNames = ['HamburgerMenu'];
     if (props.isOpen) {
         classNames = ['HamburgerMenu', 'open']
@@ -11,12 +12,15 @@ const HamburgerMenu = (props: { isOpen: boolean, hamburgerMenuCloseClickHandler:
                 <button>X</button>
             </div>
             <ul>
-                <li>
-                    <a href="/">products</a>
-                </li>
-                <li>
-                    <a href="/">users</a>
-                </li>
+                {
+                    props.links.map(link => {
+                        return (
+                            <li key={link.name}>
+                                <a href={link.path}>{link.name}</a>
+                            </li>
+                        )
+                    })
+                }
             </ul>
         </nav>
     );

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Toolbar from '../Toolbar/Toolbar';
-import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
-import HamburgerBackdrop from '../HamburgerBackdrop/HamburgerBackdrop';
+
 import './HamburgerLayout.scss';
-const HamburgerLayout = (props: any) => {
+import Toolbar from '../../components/Toolbar/Toolbar';
+import HamburgerMenu from '../../components/HamburgerMenu/HamburgerMenu';
+import HamburgerBackdrop from '../../components/HamburgerBackdrop/HamburgerBackdrop';
+const HamburgerLayout = (props: { children: any, routes: any[] }) => {
 
     const [isHamburgerMenuOpen, set_isHamburgerMenuOpen] = useState(false)
 
@@ -32,19 +33,22 @@ const HamburgerLayout = (props: any) => {
     // }
     return (
         <>
-            <Toolbar hamburgerButtonClickHandler={hamburgerButtonClickHandler} />
+            <Toolbar
+                links={props.routes}
+                hamburgerButtonClickHandler={hamburgerButtonClickHandler} />
+
+            {/* {hamburgerBackdrop} */}
+            <HamburgerBackdrop
+                isOpen={isHamburgerMenuOpen}
+                backdropAreaClickHandler={backdropAreaClickHandler} />
+
             {/* {hamburgerMenu} */}
             <HamburgerMenu
+                links={props.routes}
                 hamburgerMenuCloseClickHandler={hamburgerMenuCloseClickHandler}
                 isOpen={isHamburgerMenuOpen} />
-            <HamburgerBackdrop isOpen={isHamburgerMenuOpen} backdropAreaClickHandler={backdropAreaClickHandler} />
-            {/* {hamburgerBackdrop} */}
             <main>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Delectus veniam distinctio ad ut non?
-                Iste veniam itaque fugit nemo, commodi
-                id culpa quod, minus omnis pariatur aperiam,
-          cumque voluptates repellendus!</p>
+                {props.children}
             </main>
         </>
     );
