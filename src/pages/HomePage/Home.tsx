@@ -57,74 +57,21 @@ Angrycreative
     </aside>
 )
 
-const Article = () => (<article className="article-panel">
-    <div className="module">
-        <div className="caption">
-            <h1>SALAM</h1>
-        </div>
-    </div>
-    <div className="hero-image">
-        <img
-            src="https://unsplash.com/photos/z0MDyylvY1k/download?force=true&w=640"
-            alt=""
-        />
-        <div className="caption">
+const Article = () => (
+    <article className="article-panel">
+        <div className="hero">
+            <div className="hero-image">
+                <img
+                    src="https://unsplash.com/photos/z0MDyylvY1k/download?force=true&w=640"
+                    alt=""
+                />
+            </div>
             <h1>Samal</h1>
         </div>
-    </div>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
-        reiciendis dolor. Tenetur corporis dolorem atque eligendi? Quia veniam
-        cupiditate eum impedit nemo ullam provident. Nesciunt molestias aliquam
-        repudiandae sunt eum! Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Obcaecati, reiciendis dolor. Tenetur corporis dolorem
-        atque eligendi? Quia veniam cupiditate eum impedit nemo ullam provident.
-        Nesciunt molestias aliquam repudiandae sunt eum! Lorem, ipsum dolor sit
-        amet consectetur adipisicing elit. Obcaecati, reiciendis dolor. Tenetur
-        corporis dolorem atque eligendi? Quia veniam cupiditate eum impedit nemo
-        ullam provident. Nesciunt molestias aliquam repudiandae sunt eum! Lorem,
-        ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, reiciendis
-        dolor. Tenetur corporis dolorem atque eligendi? Quia veniam cupiditate
-        eum impedit nemo ullam provident. Nesciunt molestias aliquam repudiandae
-        sunt eum! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Obcaecati, reiciendis dolor. Tenetur corporis dolorem atque eligendi?
-        Quia veniam cupiditate eum impedit nemo ullam provident. Nesciunt
-        molestias aliquam repudiandae sunt eum! Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Obcaecati, reiciendis dolor. Tenetur
-        corporis dolorem atque eligendi? Quia veniam cupiditate eum impedit nemo
-        ullam provident. Nesciunt molestias aliquam repudiandae sunt eum! Lorem,
-        ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, reiciendis
-        dolor. Tenetur corporis dolorem atque eligendi? Quia veniam cupiditate
-        eum impedit nemo ullam provident. Nesciunt molestias aliquam repudiandae
-        sunt eum! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Obcaecati, reiciendis dolor. Tenetur corporis dolorem atque eligendi?
-        Quia veniam cupiditate eum impedit nemo ullam provident. Nesciunt
-        molestias aliquam repudiandae sunt eum! Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Obcaecati, reiciendis dolor. Tenetur
-        corporis dolorem atque eligendi? Quia veniam cupiditate eum impedit nemo
-        ullam provident. Nesciunt molestias aliquam repudiandae sunt eum! Lorem,
-        ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, reiciendis
-        dolor. Tenetur corporis dolorem atque eligendi? Quia veniam cupiditate
-        eum impedit nemo ullam provident. Nesciunt molestias aliquam repudiandae
-        sunt eum! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Obcaecati, reiciendis dolor. Tenetur corporis dolorem atque eligendi?
-        Quia veniam cupiditate eum impedit nemo ullam provident. Nesciunt
-        molestias aliquam repudiandae sunt eum! Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Obcaecati, reiciendis dolor. Tenetur
-        corporis dolorem atque eligendi? Quia veniam cupiditate eum impedit nemo
-        ullam provident. Nesciunt molestias aliquam repudiandae sunt eum! Lorem,
-        ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, reiciendis
-        dolor. Tenetur corporis dolorem atque eligendi? Quia veniam cupiditate
-        eum impedit nemo ullam provident. Nesciunt molestias aliquam repudiandae
-        sunt eum! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Obcaecati, reiciendis dolor. Tenetur corporis dolorem atque eligendi?
-        Quia veniam cupiditate eum impedit nemo ullam provident. Nesciunt
-        molestias aliquam repudiandae sunt eum! Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Obcaecati, reiciendis dolor. Tenetur
-        corporis dolorem atque eligendi? Quia veniam cupiditate eum impedit nemo
-        ullam provident. Nesciunt molestias aliquam repudiandae sunt eum!
-</p>
-</article>
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate cumque ex earum sequi. Mollitia, quibusdam minus animi id perspiciatis modi, hic odio fugit velit necessitatibus magnam veniam. Quia, sit voluptas.</p>
+        </div>
+    </article>
 );
 const HomePage = (props: any) => {
     return (

@@ -91,11 +91,13 @@
         
         // background-color: yellow;
         display: flex;
+        transition : height 0.5s ease;
         input {
             width: 100%;
             text-align: center;
             box-sizing: border-box;
             background-color: transparent;
+            font-size: xx-large;
             // background-color: orange;
             color: white;
             border: none;

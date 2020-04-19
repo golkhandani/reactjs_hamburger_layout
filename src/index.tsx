@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Helmet } from "react-helmet";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
+    <Helmet>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script
+        src="https://kit.fontawesome.com/94fd8d5665.js"
+        crossOrigin="anonymous"
+      ></script>
+      <title>Document</title>
+    </Helmet>
     <App />
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );
 

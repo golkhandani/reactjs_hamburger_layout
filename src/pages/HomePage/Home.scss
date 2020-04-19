@@ -151,12 +151,53 @@
   .home-main .navigation-panel ul li a i {
     padding: 0 6px;
   }
-  .home-main .article-panel {
+  .article-panel {
     order: 2;
     padding: 12px;
     background-color: #d3d3d3;
     display: flex;
     flex-direction: column;
+    .hero {
+        // background-color: $linkHoverColor;
+        border-radius: 5px;
+        position: relative; 
+        text-align: center;
+        box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.6);
+        width: 50%;
+        h1 {
+            color: $toolbarBackground;
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            // transform: translate(-50%);
+            z-index: 1;
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+            
+        }
+        .hero-image {
+            border-radius: 5px;
+        }
+        img {
+            display: block;
+            height: inherit;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            max-height: 300px;
+            //filter:opacity(0.5);
+            // filter: blur(10px);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 80%;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            filter: blur(50px);
+            background-color: rgb(146, 132, 94);
+        }
+    }
   }
   @media #{$down-medium-screen} {
     .home-main .article-panel {
@@ -201,35 +242,7 @@
     filter: blur(12px);
     transform: scale(1.5) translateY(0px);
   }
-  .home-main .article-panel .hero-image {
-    position: relative;
-  }
-  .home-main .article-panel .hero-image::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    display: inline-block;
-    border-radius: 5px;
-    -webkit-filter: blur(16px) contrast(75%) brightness(3%);
-    filter: blur(50%) contrast(575%) brightness(30%);
-  }
-  .home-main .article-panel .hero-image img {
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-  }
-  .home-main .article-panel .hero-image h1 {
-    color: white;
-    position: absolute;
-    bottom: 12%;
-    left: 6%;
-    z-index: 1;
-  }
+
   .home-main .aside-panel {
     order: 3;
     padding: 12px;
