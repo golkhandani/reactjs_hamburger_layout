@@ -2,16 +2,24 @@ import React from 'react';
 import './App.scss';
 import HamburgerLayout from './layout/HamburgerLayout/HamburgerLayout';
 import FeedBackFrom from './components/forms/feedback/FeedBackForm';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, useHistory } from 'react-router-dom';
 import { RouteObject } from './interfaces/routerObject.interface';
 import HomePage from './pages/HomePage/Home';
 import WeatherPage from './pages/WeatherPage/WeatherPage';
+import CronaPage from './pages/CronaPage/CronaPage';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import LoginPage from './pages/LoginPage/LoginPage';
+import fakeAuth from './services/authentication';
 
 const Notfound = () => <h1>Not found</h1>
 const routes: RouteObject[] = [
+
   {
-    name: "Weather", path: "/weather", component: WeatherPage, exact: true
+    name: "CronaStats", path: "/crona", component: CronaPage, exact: true
   },
+  // {
+  //   name: "Weather", path: "/weather", component: WeatherPage, exact: true
+  // },
   {
     name: "Form", path: "/form", component: FeedBackFrom, exact: true
   },
@@ -66,6 +74,26 @@ class CursorDot {
   }
 
 }
+
+
+function AuthButton() {
+  let history = useHistory();
+
+  return fakeAuth.isAuthenticated() ? (
+    <p>
+      Welcome!{" "}
+      <button
+        onClick={() => {
+          fakeAuth.signout(() => history.push("/"));
+        }}
+      >
+        Sign out
+      </button>
+    </p>
+  ) : (
+      <p>You are not logged in.</p>
+    );
+}
 class App extends React.Component<any, any> {
 
   cursorDot: { params: any, style: any } = new CursorDot();
@@ -119,10 +147,14 @@ class App extends React.Component<any, any> {
             ref={this.cursor}
           />
           <HamburgerLayout routes={this.routes}>
+            <AuthButton />
             <Switch>
               {this.routes.map(route =>
                 <Route key={route.name} exact={route.exact} path={route.path} component={route.component} />
               )}
+              <PrivateRoute path='/weather' component={WeatherPage} />
+              <Route path="/login" component={LoginPage} />
+
               <Route component={Notfound} />
             </Switch>
           </HamburgerLayout>

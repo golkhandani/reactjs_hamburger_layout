@@ -1,0 +1,29 @@
+
+@import '../../styles.scss';
+
+.crona-page {
+    display: grid;
+    width: 100%;
+    
+    margin-top: $space;
+    grid-template-columns: repeat(3,20%);
+    justify-content: space-around;
+    box-sizing: border-box;
+    align-items: center;
+    row-gap: $space;
+
+   
+      @media #{$down-medium-screen} {
+        grid-template-columns : repeat(2,50%);
+        row-gap: $space;
+        column-gap: $space;
+      }
+      @media #{$down-small-screen} {
+        grid-template-columns : 100%
+      }
+    .a {
+        background-color: red;
+        min-height: 200px;
+    }
+    
+}
